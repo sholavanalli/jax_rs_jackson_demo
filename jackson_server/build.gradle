@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:1.4.2'
+    }
+}
+apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+project.group = 'js_grp'
+project.version = '1.0'
+jar.baseName = 'js_art'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://localhost/Users/srh/.m2/repository")
+        }
+    }
+}
+
+// In this section you declare where to find the dependencies of your project
+dependencies {
+
+    compile 'com.sun.jersey:jersey-server:1.9'
+    compile 'com.sun.jersey:jersey-json:1.9'
+
+    // Use JUnit test framework
+    testCompile 'junit:junit:4.12'
+}
+
+// Define the main class for the application
+mainClassName = 'QueryImplController'
+
