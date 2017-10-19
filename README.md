@@ -1,8 +1,3 @@
-# Apache thrift demo --
+# Java object binding with Jackson and JAX RS --
 
-Install thrift to compile .thrift files. On mac OS use "brew install thrift".  
- 
-To compile .thrift files run "thrift --gen java -out src/main/java src/thrift/QueryRemote.thrift" under thrift_server.  
-  
-Do "gradle uploadArchives" under thrift_server to create a JAR artifact and deploy to local maven cache.  
-
+This project demonstrates how a REST server (using JAX-RS spec) and client can communicate with each other using Java object serialization and deserialization provided by Jackson.  
