@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 public class QueryClient {
 
-    public QueryResult runQuery(String expression, int offset, int limit) throws QueryException {
+    public QueryResult runQuery(String expression, int limit, int offset) throws QueryException {
 
         ClientConfig clientConfig = new DefaultClientConfig();
         clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);

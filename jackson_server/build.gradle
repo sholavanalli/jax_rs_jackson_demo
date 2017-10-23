@@ -12,7 +12,7 @@ apply plugin: 'maven'
 apply plugin: 'application'
 
 project.group = 'js_grp'
-project.version = '1.0'
+project.version = '2.0'
 jar.baseName = 'js_art'
 
 repositories {

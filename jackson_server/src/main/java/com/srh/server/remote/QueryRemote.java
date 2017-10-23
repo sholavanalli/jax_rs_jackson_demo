@@ -6,8 +6,8 @@ import com.srh.server.QueryResult;
 public interface QueryRemote {
 
     // v1.0
-    QueryResult runQuery(String expression, int limit, int offset) throws QueryException;
+//    QueryResult runQuery(String expression, int limit, int offset) throws QueryException;
 
     // v2.0
-//    QueryResult runQuery(String expression, int offset, String aggType) throws QueryException;
+    QueryResult runQuery(String expression, int limit, String aggType) throws QueryException;
 }

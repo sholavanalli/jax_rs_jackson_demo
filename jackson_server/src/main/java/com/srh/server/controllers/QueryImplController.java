@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 public class QueryImplController {
 
     // v1.0
-    @GET
+    /*@GET
     @Path("/runQuery")
     @Produces(MediaType.APPLICATION_JSON)
     public QueryResult runQuery(@QueryParam("expression") String expression, @QueryParam("limit") int limit,
@@ -26,20 +26,20 @@ public class QueryImplController {
         } catch (QueryException e) {
             throw e;
         }
-    }
+    }*/
 
-    // v2.0 - added aggType, removed offset
-    /*@GET
+    // v2.0 - added aggType to param and QueryResult, removed offset from param and QueryResult
+    @GET
     @Path("/runQuery")
     @Produces(MediaType.APPLICATION_JSON)
     public QueryResult runQuery(@QueryParam("expression") String expression, @QueryParam("limit") int limit,
-                                @QueryParam("offset") int offset, @QueryParam("aggType") String aggType) throws QueryException {
+                                @QueryParam("aggType") String aggType) throws QueryException {
         try {
-            System.out.println(String.format("In %s.runQuery with args expression: %s, limit: %d, offset: %d, aggType: %s",
-                    QueryImplController.class.getSimpleName(), expression, limit, offset, aggType));
-            return new QueryImpl().runQuery(expression, limit, offset, aggType);
+            System.out.println(String.format("In %s.runQuery with args expression: %s, limit: %d, aggType: %s",
+                    QueryImplController.class.getSimpleName(), expression, limit, aggType));
+            return new QueryImpl().runQuery(expression, limit, aggType);
         } catch (QueryException e) {
             throw e;
         }
-    }*/
+    }
 }
